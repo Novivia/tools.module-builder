@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+require("better-log/install");
+require("babel-core/register");
+require("./cli");
