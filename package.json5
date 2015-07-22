@@ -1,7 +1,7 @@
 {
   "name": "@auex/build-module",
   "version": "0.0.1",
-  "publishConfig":{
+  "publishConfig": {
     "registry": "https://npm.novivia.com"
   },
   "description": "AuctionEx Node.js module builder and packager.",
@@ -13,7 +13,7 @@
     "url": "git+ssh://git.novivia.com/auex/tools.build-module"
   },
   "scripts": {
-    "build": "./cliWrapper build -b cli.js -p cliWrapper",
+    "build": "./cliWrapper build -b cli.js -p cliWrapper --no-runtime",
   },
   "bin": {
     "build-module": "./cliWrapper"
