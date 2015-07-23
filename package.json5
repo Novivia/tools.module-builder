@@ -2,8 +2,8 @@
   "name": "@auex/build-module",
   "version": "0.0.2",
   "publishConfig": {
-    // "registry": "https://npm.novivia.com"
-    "registry": "http://localhost:4873/"
+    "registry": "https://npm.novivia.com"
+    // "registry": "http://localhost:4873/"
   },
   "description": "AuctionEx Node.js module builder and packager.",
   "authors": [
