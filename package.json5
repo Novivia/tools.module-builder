@@ -2,7 +2,8 @@
   "name": "@auex/build-module",
   "version": "0.0.2",
   "publishConfig": {
-    "registry": "https://npm.novivia.com"
+    // "registry": "https://npm.novivia.com"
+    "registry": "http://localhost:4873/"
   },
   "description": "AuctionEx Node.js module builder and packager.",
   "authors": [
@@ -14,7 +15,8 @@
   },
   "scripts": {
     "build": "./cliWrapper build -b cli.js -p cliWrapper --no-runtime",
-    "publish": "./cliWrapper publish",
+    "pub": "./cliWrapper publish",
+    "release": "./cliWrapper release",
   },
   "bin": {
     "build-module": "./cliWrapper"
@@ -34,7 +36,6 @@
     "micromatch": "^2.1.6",
     "mkdirp": "^0.5.1",
     "node-uuid": "^1.4.3",
-    "npm": "^2.13.1",
     "pkginfo-json5": "^0.5.0",
     "tar": "^2.1.1",
     "tempura": "^0.0.8",
