@@ -1,6 +1,6 @@
-import yargs from "yargs";
 import {build, publication, utils} from "./lib";
 import getPkgInfo from "pkginfo-json5";
+import yargs from "yargs";
 
 const {npmExecute} = utils;
 const pkgInfo = getPkgInfo(module);
@@ -185,6 +185,7 @@ async function releaseCommand(args) {
 
   const newVersion = argv._[1];
 
+
   // npm version bump.
   try {
     await npmExecute(`version ${newVersion} ${verbosity}`);
@@ -214,11 +215,7 @@ async function releaseCommand(args) {
       await npmExecute(`run pub ${verbosity}`)
     );
   } catch(e) {
-    process.stderr.write(e);
-  }
-
-  if (!isSilent) {
-    console.log("Package released!");
+    return process.stderr.write(e);
   }
 }
 
@@ -244,24 +241,6 @@ yargs
   releaseCommand,
 )
 .demand(1)
-
-
-// .completion(
-//   "release",
-//   (current, argv) => {
-//     console.log(current);
-
-//     return [
-//       "major",
-//       "minor",
-//       "patch",
-//       "premajor",
-//       "preminor",
-//       "prepatch",
-//       "prerelease",
-//     ];
-//   }
-// )
 
 .version(pkgInfo.version)
 .epilog(`Version ${pkgInfo.version}`)
