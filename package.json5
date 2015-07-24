@@ -3,7 +3,6 @@
   "version": "0.0.3",
   "publishConfig": {
     "registry": "https://npm.novivia.com"
-    // "registry": "http://localhost:4873/"
   },
   "description": "AuctionEx Node.js module builder and packager.",
   "authors": [
@@ -19,11 +18,9 @@
     "release": "./cliWrapper release",
   },
   "bin": {
-    "build-module": "./cliWrapper"
+    "build-module": "./cliWrapper",
   },
   "dependencies": {
-    // AuctionEx dependencies.
-
     // npm dependencies.
     "babel-core": "^5.8.3",
     "better-log": "^1.3.1",
@@ -34,7 +31,6 @@
     "json5": "^0.4.0",
     "lodash": "^3.10.0",
     "micromatch": "^2.1.6",
-    "mkdirp": "^0.5.1",
     "node-uuid": "^1.4.3",
     "pkginfo-json5": "^0.5.0",
     "tar": "^2.1.1",

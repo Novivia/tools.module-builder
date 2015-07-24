@@ -11,6 +11,9 @@ function printLog(logLines) {
   process.stdout.write(logLines.reverse().join());
 }
 
+/**
+ * Command to handle the build process.
+ */
 async function buildCommand(args) {
   const argv = (
     args
@@ -76,7 +79,9 @@ async function buildCommand(args) {
   }
 }
 
-
+/**
+ * Command to handle the publish process.
+ */
 async function publishCommand(args) {
   const argv = (
     args
@@ -148,6 +153,9 @@ async function publishCommand(args) {
   return publishedFile;
 }
 
+/**
+ * Command to handle the release process.
+ */
 async function releaseCommand(args) {
   const argv = (
     args
@@ -207,13 +215,10 @@ async function releaseCommand(args) {
     verbosity = `-- ${verbosity}`;
   }
 
+  // Build & publish.
   try {
-    printLog(
-      await npmExecute(`run build ${verbosity}`)
-    );
-    printLog(
-      await npmExecute(`run pub ${verbosity}`)
-    );
+    printLog(await npmExecute(`run build ${verbosity}`));
+    printLog(await npmExecute(`run pub ${verbosity}`));
   } catch(e) {
     return process.stderr.write(e);
   }
