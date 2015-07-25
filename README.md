@@ -75,7 +75,7 @@ publish the most recent one.
 This command first executes `npm version` with the same argument that you
 provided to it to bump the version, so `build-module release patch` would
 execute `npm version patch`. It then builds & publishes the module, with a
-twist: it leverages `npm run build` and `npm run pub̀ to do so, meaning that you
+twist: it leverages `npm run build` and `npm run pub` to do so, meaning that you
 still get to leverage whatever options you put in your package file for these
 two.
 
