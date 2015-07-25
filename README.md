@@ -41,6 +41,20 @@ Please note that for files that are matched by any of the Babel patterns, they
 will get compiled and put in the right place, but the originals will not be
 copied over even if they are matched by any of the `-p` patterns.
 
+By default, files matching the following glob are compiled using Babel:
+`lib/**/*.js`.
+
+By default, files matching any of the following globs are copied over to the
+package:
+
+  * `lib/**!(*.js~)`
+  * `index.js`
+  * `package.json`
+  * `CHANGELOG*`
+  * `CONTRIBUTING*`
+  * `LICENSE*`
+  * `README*`
+
 ### Publish a module
 
 ```
@@ -59,7 +73,7 @@ publish the most recent one.
 ### Release a module
 
 This command first executes `npm version` with the same argument that you
-provided to it to bump the version, so `build-module release patch̀ would
+provided to it to bump the version, so `build-module release patch` would
 execute `npm version patch`. It then builds & publishes the module, with a
 twist: it leverages `npm run build` and `npm run pub̀ to do so, meaning that you
 still get to leverage whatever options you put in your package file for these

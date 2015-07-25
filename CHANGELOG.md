@@ -5,6 +5,8 @@
 * Added a change log. (This!)
 * Added a readme.
 * First version "production-ready" for other modules.
+* Corrected an erroneous glob to ignore temporary files that caused missing out
+  on valid files.
 
 ## v0.0.3 - (23/07/2015)
 
