@@ -1,6 +1,6 @@
 # Versions
 
-## v0.1.0 - (24/07/2015)
+## v0.1.0 - (31/07/2015)
 
 * Added a change log. (This!)
 * Added a readme.

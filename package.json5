@@ -15,11 +15,22 @@
   },
   "scripts": {
     "build": "./cliWrapper build -b cli.js -p cliWrapper --no-runtime",
+    "lint": "eslint-myrules lint",
     "pub": "./cliWrapper publish",
     "release": "./cliWrapper release",
   },
   "bin": {
     "build-module": "./cliWrapper",
+  },
+  "eslint-myrules": {
+    "targets": {
+      "global": ["lib", "cli.js"]
+    },
+    "options": "",
+  },
+  "devDependencies": {
+    // AuctionEx dependencies.
+    "@auex/eslint-myrules": "^0.1.2",
   },
   "dependencies": {
     // npm dependencies.

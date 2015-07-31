@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import {build, publication, utils} from "./lib";
 import getPkgInfo from "pkginfo-json5";
 import yargs from "yargs";
@@ -11,7 +12,7 @@ function printLog(logLines) {
   process.stdout.write(logLines.reverse().join());
 }
 
-/**
+/*
  * Command to handle the build process.
  */
 async function buildCommand(args) {
@@ -79,7 +80,7 @@ async function buildCommand(args) {
   }
 }
 
-/**
+/*
  * Command to handle the publish process.
  */
 async function publishCommand(args) {
@@ -153,7 +154,7 @@ async function publishCommand(args) {
   return publishedFile;
 }
 
-/**
+/*
  * Command to handle the release process.
  */
 async function releaseCommand(args) {
