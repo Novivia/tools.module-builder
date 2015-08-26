@@ -1,5 +1,11 @@
 # Versions
 
+## v0.1.1 - (26/08/2015)
+
+* Not binding the `babel-runtime` injected dependency to the full Babel version
+  anymore, only to the same major version.
+
+
 ## v0.1.0 - (31/07/2015)
 
 * Added a change log. (This!)
@@ -7,6 +13,7 @@
 * First version "production-ready" for other modules.
 * Corrected an erroneous glob to ignore temporary files that caused missing out
   on valid files.
+
 
 ## v0.0.3 - (23/07/2015)
 
