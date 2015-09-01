@@ -1,5 +1,16 @@
 # Versions
 
+## v0.1.2 - (01/09/2015)
+
+* Now properly recognizing pre-release semantic versioning patterns at
+  publication time, such as "v1.2.3-rc.1". Previously, the `publish` command
+  would erroneously output: "Unable to publish, no candidate found."
+
+* Updated dependencies:
+    * `@auex/eslint-myrules` to v0.3.
+    * `fs-extra` to v0.24.
+
+
 ## v0.1.1 - (26/08/2015)
 
 * Not binding the `babel-runtime` injected dependency to the full Babel version
