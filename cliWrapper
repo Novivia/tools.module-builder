@@ -1,4 +1,5 @@
 #!/usr/bin/env node
 require("better-log/install");
 require("babel-core/register");
+require("babel-polyfill");
 require("./cli");
