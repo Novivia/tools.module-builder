@@ -1,5 +1,10 @@
 # Versions
 
+## v0.2.0 - ()
+
+* Updated tooling to Babel 6.
+
+
 ## v0.1.2 - (01/09/2015)
 
 * Now properly recognizing pre-release semantic versioning patterns at

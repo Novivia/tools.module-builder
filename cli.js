@@ -70,6 +70,7 @@ async function buildCommand(args) {
   } catch(e) {
     if (!isSilent) {
       console.error("Compilation failed:", e);
+      console.log(e.stack);
     }
 
     return;
