@@ -10,7 +10,11 @@ const maxTerminalWidth = 160;
 const terminalWidth = Math.min(yargs.terminalWidth(), maxTerminalWidth);
 
 function printLog(logLines) {
-  process.stdout.write(logLines.reverse().join());
+  if (Array.isArray(logLines)) {
+    process.stdout.write(logLines.reverse().join());
+  } else {
+    process.stdout.write(logLines);
+  }
 }
 
 /*
@@ -223,7 +227,10 @@ async function releaseCommand(args) {
     printLog(await npmExecute(`run build ${verbosity}`));
     printLog(await npmExecute(`run pub ${verbosity}`));
   } catch (e) {
-    return process.stderr.write(e);
+    process.stderr.write(e);
+    process.stderr.write(e.stack);
+
+    return;
   }
 }
 
