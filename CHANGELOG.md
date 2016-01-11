@@ -1,5 +1,10 @@
 # Versions
 
+## v0.2.1 - (11/01/2016)
+
+* Fixed a bug preventing the compilation when requesting the runtime helper.
+
+
 ## v0.2.0 - (11/01/2016)
 
 * Updated code to be compliant with Babel 6.
