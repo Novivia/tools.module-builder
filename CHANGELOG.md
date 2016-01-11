@@ -1,5 +1,26 @@
 # Versions
 
+## v0.2.0 - (11/01/2016)
+
+* Updated code to be compliant with Babel 6.
+
+* New dependencies:
+    * `babel-plugin-transform-runtime`
+    * `babel-plugin-typecheck`
+    * `babel-polyfill`
+    * `babel-preset-es2015`
+    * `babel-preset-react`
+    * `babel-preset-stage-0`
+    * `babel-register`
+
+* Updated dependencies:
+    * `@auex/eslint-myrules` to v0.5.
+    * `babel-core` to v6.
+    * `bluebird` to v3.
+    * `fs-extra` to v0.26.
+    * `walkdir` to v0.0.11.
+
+
 ## v0.1.2 - (01/09/2015)
 
 * Now properly recognizing pre-release semantic versioning patterns at

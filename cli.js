@@ -6,10 +6,15 @@ import yargs from "yargs";
 const {npmExecute} = utils;
 const pkgInfo = getPkgInfo(module);
 
-const terminalWidth = Math.min(yargs.terminalWidth(), 160);
+const maxTerminalWidth = 160;
+const terminalWidth = Math.min(yargs.terminalWidth(), maxTerminalWidth);
 
 function printLog(logLines) {
-  process.stdout.write(logLines.reverse().join());
+  if (Array.isArray(logLines)) {
+    process.stdout.write(logLines.reverse().join());
+  } else {
+    process.stdout.write(logLines);
+  }
 }
 
 /*
@@ -67,9 +72,10 @@ async function buildCommand(args) {
       silent: isSilent,
       verbose: !!argv.verbose,
     });
-  } catch(e) {
+  } catch (e) {
     if (!isSilent) {
       console.error("Compilation failed:", e);
+      console.log(e.stack);
     }
 
     return;
@@ -125,7 +131,7 @@ async function publishCommand(args) {
       silent: isSilent,
       verbose: !!argv.verbose,
     });
-  } catch(e) {
+  } catch (e) {
     if (!isSilent) {
       console.error("Publication failed:", e);
     }
@@ -144,7 +150,7 @@ async function publishCommand(args) {
   if (argv.clean) {
     try {
       await build.clean(publishedFile);
-    } catch(e) {
+    } catch (e) {
       if (!isSilent) {
         console.error("Unable to clean published file:", e);
       }
@@ -198,7 +204,7 @@ async function releaseCommand(args) {
   // npm version bump.
   try {
     await npmExecute(`version ${newVersion} ${verbosity}`);
-  } catch(e) {
+  } catch (e) {
     if (isSilent) {
       return;
     }
@@ -220,12 +226,16 @@ async function releaseCommand(args) {
   try {
     printLog(await npmExecute(`run build ${verbosity}`));
     printLog(await npmExecute(`run pub ${verbosity}`));
-  } catch(e) {
-    return process.stderr.write(e);
+  } catch (e) {
+    process.stderr.write(e);
+    process.stderr.write(e.stack);
+
+    return;
   }
 }
 
-yargs
+
+yargs // eslint-disable-line no-unused-expressions
 .usage("Usage: $0 <command> [options]")
 
 .wrap(terminalWidth)
