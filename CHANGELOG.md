@@ -14,6 +14,7 @@
     * `babel-register`
 
 * Updated dependencies:
+    * `@auex/eslint-myrules` to v0.5.
     * `babel-core` to v6.
     * `bluebird` to v3.
     * `fs-extra` to v0.26.
