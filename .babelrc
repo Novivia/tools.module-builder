@@ -1,4 +1,4 @@
 {
-  "plugins": ["typecheck"],
+  "plugins": ["typecheck", "add-module-exports", "transform-decorators-legacy"],
   "presets": ["es2015", "react", "stage-0"]
 }
