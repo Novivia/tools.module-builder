@@ -1,5 +1,11 @@
 # Versions
 
+## v0.2.2 - (12/01/2016)
+
+* Now compiling Babel with default presets "es2015", "react" and "stage-0" as
+  should have been the case with v0.2.0.
+
+
 ## v0.2.1 - (11/01/2016)
 
 * Fixed a bug preventing the compilation when requesting the runtime helper.
