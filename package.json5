@@ -1,6 +1,6 @@
 {
   "name": "@auex/build-module",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "license": "SEE LICENSE IN LICENSE.md",
   "publishConfig": {
     "registry": "https://npm.novivia.com"
