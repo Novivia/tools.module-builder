@@ -1,6 +1,6 @@
 {
   "name": "@auex/build-module",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "license": "SEE LICENSE IN LICENSE.md",
   "publishConfig": {
     "registry": "https://npm.novivia.com"
@@ -35,6 +35,8 @@
   "dependencies": {
     // npm dependencies.
     "babel-core": "^6.4.0",
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-runtime": "^6.4.0",
     "babel-plugin-typecheck": "^3.6.1",
     "babel-polyfill": "^6.3.14",

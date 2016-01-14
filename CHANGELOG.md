@@ -1,5 +1,15 @@
 # Versions
 
+## v0.2.3 - (14/01/2016)
+
+* Now aliasing `module.exports` to lone `export default` statements as was the
+  case under Babel 5.
+* Now recognizing experimental decorator syntax, as was the case under Babel 5.
+
+* New dependencies:
+    * `babel-plugin-add-module-exports`
+    * `babel-plugin-transform-decorators-legacy`
+
 ## v0.2.2 - (12/01/2016)
 
 * Now compiling Babel with default presets "es2015", "react" and "stage-0" as
