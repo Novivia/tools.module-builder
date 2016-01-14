@@ -1,5 +1,10 @@
 # Versions
 
+## v0.2.4 - (14/01/2016)
+
+* Now properly building third-party code by leveraging additions from v0.2.3.
+
+
 ## v0.2.3 - (14/01/2016)
 
 * Now aliasing `module.exports` to lone `export default` statements as was the
@@ -9,6 +14,7 @@
 * New dependencies:
     * `babel-plugin-add-module-exports`
     * `babel-plugin-transform-decorators-legacy`
+
 
 ## v0.2.2 - (12/01/2016)
 
