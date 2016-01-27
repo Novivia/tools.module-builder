@@ -1,5 +1,10 @@
 # Versions
 
+## v0.2.5 - (27/01/2016)
+
+* No longer compiling any file located in the "node_modules" directory.
+
+
 ## v0.2.4 - (14/01/2016)
 
 * Now properly building third-party code by leveraging additions from v0.2.3.
