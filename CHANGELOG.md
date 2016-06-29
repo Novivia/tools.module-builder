@@ -1,5 +1,11 @@
 # Versions
 
+## v0.2.6 - ()
+
+* Added "npm-json5" to the list of npm CLIs to detect. The order is now "yapm",
+  "npm-json5" and then "npm".
+
+
 ## v0.2.5 - (27/01/2016)
 
 * No longer compiling any file located in the "node_modules" directory.
