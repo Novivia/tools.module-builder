@@ -1,6 +1,6 @@
 # Versions
 
-## v0.2.6 - ()
+## v0.2.6 - (28/06/2016)
 
 * Added "npm-json5" to the list of npm CLIs to detect. The order is now "yapm",
   "npm-json5" and then "npm".
