@@ -1,5 +1,17 @@
 # Versions
 
+## v0.3.0 - ()
+
+* Project now maintained under the Novivia scope. (@novivia)
+
+* Updated dependencies:
+    * `@auex/linter` to v1.
+    * `babel-plugin-add-module-exports` to v0.2.
+    * `fs-extra` to v0.30.
+    * `json5` to v0.5.
+    * `lodash` to v4.
+    * `yargs` to v4.
+
 ## v0.2.6 - (28/06/2016)
 
 * Added "npm-json5" to the list of npm CLIs to detect. The order is now "yapm",
