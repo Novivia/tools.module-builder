@@ -5,7 +5,7 @@
 * Project now maintained under the Novivia scope. (@novivia)
 
 * Updated dependencies:
-    * `@auex/linter` to v1.
+    * `@novivia/linter` to v1.
     * `babel-plugin-add-module-exports` to v0.2.
     * `fs-extra` to v0.30.
     * `json5` to v0.5.

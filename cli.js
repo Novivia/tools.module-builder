@@ -1,3 +1,8 @@
+/**
+ * Copyright 2013-present, Novivia, Inc.
+ * All rights reserved.
+ */
+
 /* eslint-disable no-console */
 import {build, publication, utils} from "./lib";
 import getPkgInfo from "pkginfo-json5";
@@ -130,7 +135,7 @@ async function releaseCommandHandler(argv) {
 
     if (~e.message.indexOf("Git working directory not clean")) {
       return console.error(
-        "You cannot release if you have changes not committed or stashed!"
+        "You cannot release if you have changes not committed or stashed!",
       );
     }
 
@@ -174,7 +179,7 @@ yargs // eslint-disable-line no-unused-expressions
   args => args
     .wrap(terminalWidth)
     .example(
-      "$0 build -b 'util/**/*.js'", "Build the matching files using Babel"
+      "$0 build -b 'util/**/*.js'", "Build the matching files using Babel",
     )
 
     .alias("b", "babel")
@@ -230,18 +235,19 @@ yargs // eslint-disable-line no-unused-expressions
   "Bumps the version, builds the tarball and publishes it",
   args => args
     .example(
-      "$0 release major", "Release the current code with a major version bump"
+      "$0 release major", "Release the current code with a major version bump",
     )
     .example(
-      "$0 release minor", "Release the current code with a minor version bump"
+      "$0 release minor", "Release the current code with a minor version bump",
     )
     .example(
-      "$0 release patch", "Release the current code with a patch version bump"
+      "$0 release patch", "Release the current code with a patch version bump",
     )
     .example(
-      "$0 release 1.2.3", "Release the current code under version 1.2.3"
+      "$0 release 1.2.3", "Release the current code under version 1.2.3",
     )
 
+    // eslint-disable-next-line no-magic-numbers
     .demand(2)
 
     .alias("s", "silent")
