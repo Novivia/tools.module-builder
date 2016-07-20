@@ -296,16 +296,6 @@
       "maxEOF": 1
     }],
     "no-nested-ternary": "error",
-    "object-curly-newline": ["error", {
-      "ObjectExpression": {
-        "minProperties": 0,
-        "multiline": true
-      },
-      "ObjectPattern": {
-        "minProperties": 0,
-        "multiline": true
-      }
-    }],
     "babel/object-curly-spacing": ["error", "never"],
     "operator-linebreak": ["error", "after", {
       "overrides": {
