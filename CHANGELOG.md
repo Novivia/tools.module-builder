@@ -4,6 +4,9 @@
 
 * Project now maintained under the Novivia scope. (@novivia)
 
+* New dependencies:
+    * `@novivia/open-sourcer`
+
 * Updated dependencies:
     * `@novivia/linter` to v1.
     * `babel-plugin-add-module-exports` to v0.2.

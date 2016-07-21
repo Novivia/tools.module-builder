@@ -16,6 +16,7 @@
   "scripts": {
     "build": "./cliWrapper build -b cli.js -p cliWrapper --no-runtime",
     "lint": "novivia-linter lint",
+    "open-source": "open-source",
     "pub": "./cliWrapper publish",
     "release": "./cliWrapper release",
   },
@@ -29,8 +30,9 @@
     "options": "",
   },
   "devDependencies": {
-    // AuctionEx dependencies.
-    "@novivia/linter": "^1.0.0-beta.6",
+    // Novivia dependencies.
+    "@novivia/linter": "^1.0.0",
+    "@novivia/open-sourcer": "^0.1.0",
   },
   "dependencies": {
     // npm dependencies.

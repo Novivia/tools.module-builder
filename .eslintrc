@@ -205,7 +205,7 @@
     "security/detect-possible-timing-attacks": "error",
     "security/detect-pseudoRandomBytes": "error",
     "security/detect-unsafe-regex": "error",
-    "header/header": ["error", "block", ["*", " * Copyright 2013-present, Novivia, Inc.", " * All rights reserved.", " "]],
+    "header/header": ["warn", "block", ["*", " * Copyright 2013-present, Novivia, Inc.", " * All rights reserved.", " "]],
     "filenames/match-exported": "error",
     "filenames/match-regex": ["error", "^[A-Z]?([a-z0-9]+)([A-Z][a-z0-9]+)*(JSON)?$"],
     "arrow-body-style": ["error", "as-needed"],
