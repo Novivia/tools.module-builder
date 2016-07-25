@@ -1,6 +1,6 @@
 {
   "name": "@novivia/build-module",
-  "version": "0.2.6",
+  "version": "0.3.0",
   "license": "SEE LICENSE IN LICENSE.md",
   "publishConfig": {
     "registry": "https://npm.novivia.com"
