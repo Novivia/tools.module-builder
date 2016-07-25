@@ -3,6 +3,8 @@
 ## v0.3.0 - ()
 
 * Project now maintained under the Novivia scope. (@novivia)
+* If the `publishConfig` key is not present in the package information, it is
+  now assumed that the package shall be published to the public npm registry.
 
 * New dependencies:
     * `@novivia/open-sourcer`
