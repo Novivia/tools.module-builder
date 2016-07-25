@@ -2,40 +2,36 @@
   "name": "@novivia/build-module",
   "version": "0.3.0",
   "license": "SEE LICENSE IN LICENSE.md",
-  "publishConfig": {
-    "registry": "https://npm.novivia.com"
-  },
   "description": "AuctionEx Node.js module builder and packager.",
   "authors": [
-    "Mathieu M-Gosselin <mathieumg@novivia.com>",
+    "Mathieu M-Gosselin <mathieumg@novivia.com>"
   ],
   "repository": {
     "type": "git",
-    "url": "git+ssh://git.novivia.com/nov/tools.module-builder"
+    "url": "git@github.com:Novivia/tools.module-builder.git"
   },
   "scripts": {
     "build": "./cliWrapper build -b cli.js -p cliWrapper --no-runtime",
     "lint": "novivia-linter lint",
-    "open-source": "open-source",
     "pub": "./cliWrapper publish",
-    "release": "./cliWrapper release",
+    "release": "./cliWrapper release"
   },
   "bin": {
-    "build-module": "./cliWrapper",
+    "build-module": "./cliWrapper"
   },
   "novivia-linter": {
     "targets": {
-      "global": ["lib", "cli.js"],
+      "global": [
+        "lib",
+        "cli.js"
+      ]
     },
-    "options": "",
+    "options": ""
   },
   "devDependencies": {
-    // Novivia dependencies.
-    "@novivia/linter": "^1.0.0",
-    "@novivia/open-sourcer": "^0.1.0",
+    "@novivia/linter": "^1.0.0"
   },
   "dependencies": {
-    // npm dependencies.
     "babel-core": "^6.10.4",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
@@ -59,6 +55,6 @@
     "tar": "^2.2.1",
     "tempura": "^0.0.8",
     "walkdir": "^0.0.11",
-    "yargs": "^4.8.1",
+    "yargs": "^4.8.1"
   }
 }
