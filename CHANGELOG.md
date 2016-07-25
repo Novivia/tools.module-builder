@@ -1,6 +1,6 @@
 # Versions
 
-## v0.3.0 - ()
+## v0.3.0 - (25/07/2016)
 
 * Project now maintained under the Novivia scope. (@novivia)
 * If the `publishConfig` key is not present in the package information, it is
