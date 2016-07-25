@@ -1,3 +1,8 @@
+/**
+ * Copyright 2013-present, Novivia, Inc.
+ * All rights reserved.
+ */
+
 /* eslint-disable no-console */
 import {build, publication, utils} from "./lib";
 import getPkgInfo from "pkginfo-json5";
@@ -20,36 +25,7 @@ function printLog(logLines) {
 /*
  * Command to handle the build process.
  */
-async function buildCommand(args) {
-  const argv = (
-    args
-    .wrap(terminalWidth)
-    .example(
-      "$0 build -b 'util/**/*.js'", "Build the matching files using Babel"
-    )
-
-    .alias("b", "babel")
-    .describe("b", "Provide a pattern to compile with Babel")
-
-    .alias("p", "package")
-    .describe("p", "Provide a pattern to package")
-
-    .alias("r", "runtime")
-    .default("r", true)
-    .describe(
-      "r",
-      "Force to use the Babel runtime even if it can't be found during " +
-      "compilation",
-    )
-
-    .alias("s", "silent")
-    .alias("v", "verbose")
-
-    .help("h")
-    .alias("h", "help")
-    .argv
-  );
-
+async function buildCommandHandler(argv) {
   let packagePatterns = [];
   if (argv.package) {
     packagePatterns = Array.isArray(argv.package) ?
@@ -89,33 +65,7 @@ async function buildCommand(args) {
 /*
  * Command to handle the publish process.
  */
-async function publishCommand(args) {
-  const argv = (
-    args
-    .wrap(terminalWidth)
-    .example(
-      "$0 publish myModule-v1.2.3-8e19b7c8-d5d6-4e60-87fb-9c8aceadae51.tar.gz",
-      "Publish the specified module",
-    )
-
-    .alias("c", "clean")
-    .default("c", true)
-    .describe("c", "Remove the file after publication")
-
-    .alias("m", "most-recent")
-    .describe(
-      "m",
-      "If no file is specified, use the most recent matching the pattern",
-    )
-
-    .alias("s", "silent")
-    .alias("v", "verbose")
-
-    .help("h")
-    .alias("h", "help")
-    .argv
-  );
-
+async function publishCommandHandler(argv) {
   const isSilent = !!argv.silent;
 
   let publishFile;
@@ -163,32 +113,7 @@ async function publishCommand(args) {
 /*
  * Command to handle the release process.
  */
-async function releaseCommand(args) {
-  const argv = (
-    args
-    .example(
-      "$0 release major", "Release the current code with a major version bump"
-    )
-    .example(
-      "$0 release minor", "Release the current code with a minor version bump"
-    )
-    .example(
-      "$0 release patch", "Release the current code with a patch version bump"
-    )
-    .example(
-      "$0 release 1.2.3", "Release the current code under version 1.2.3"
-    )
-
-    .demand(2)
-
-    .alias("s", "silent")
-    .alias("v", "verbose")
-
-    .help("h")
-    .alias("h", "help")
-    .argv
-  );
-
+async function releaseCommandHandler(argv) {
   const isSilent = !!argv.silent;
   const isVerbose = !!argv.verbose;
   let verbosity = "";
@@ -200,7 +125,6 @@ async function releaseCommand(args) {
 
   const newVersion = argv._[1];
 
-
   // npm version bump.
   try {
     await npmExecute(`version ${newVersion} ${verbosity}`);
@@ -211,7 +135,7 @@ async function releaseCommand(args) {
 
     if (~e.message.indexOf("Git working directory not clean")) {
       return console.error(
-        "You cannot release if you have changes not committed or stashed!"
+        "You cannot release if you have changes not committed or stashed!",
       );
     }
 
@@ -249,12 +173,89 @@ yargs // eslint-disable-line no-unused-expressions
 .help("h")
 .alias("h", "help")
 
-.command("build", "Build the module to a .tar.gz file", buildCommand)
-.command("publish", "Publish the module from a .tar.gz file", publishCommand)
+.command(
+  "build",
+  "Build the module to a .tar.gz file",
+  args => args
+    .wrap(terminalWidth)
+    .example(
+      "$0 build -b 'util/**/*.js'", "Build the matching files using Babel",
+    )
+
+    .alias("b", "babel")
+    .describe("b", "Provide a pattern to compile with Babel")
+
+    .alias("p", "package")
+    .describe("p", "Provide a pattern to package")
+
+    .alias("r", "runtime")
+    .default("r", true)
+    .describe(
+      "r",
+      "Force to use the Babel runtime even if it can't be found during " +
+      "compilation",
+    )
+
+    .alias("s", "silent")
+    .alias("v", "verbose")
+
+    .help("h")
+    .alias("h", "help"),
+  buildCommandHandler,
+)
+.command(
+  "publish",
+  "Publish the module from a .tar.gz file",
+  args => args
+    .wrap(terminalWidth)
+    .example(
+      "$0 publish myModule-v1.2.3-8e19b7c8-d5d6-4e60-87fb-9c8aceadae51.tar.gz",
+      "Publish the specified module",
+    )
+
+    .alias("c", "clean")
+    .default("c", true)
+    .describe("c", "Remove the file after publication")
+
+    .alias("m", "most-recent")
+    .describe(
+      "m",
+      "If no file is specified, use the most recent matching the pattern",
+    )
+
+    .alias("s", "silent")
+    .alias("v", "verbose")
+
+    .help("h")
+    .alias("h", "help"),
+  publishCommandHandler,
+)
 .command(
   "release",
   "Bumps the version, builds the tarball and publishes it",
-  releaseCommand,
+  args => args
+    .example(
+      "$0 release major", "Release the current code with a major version bump",
+    )
+    .example(
+      "$0 release minor", "Release the current code with a minor version bump",
+    )
+    .example(
+      "$0 release patch", "Release the current code with a patch version bump",
+    )
+    .example(
+      "$0 release 1.2.3", "Release the current code under version 1.2.3",
+    )
+
+    // eslint-disable-next-line no-magic-numbers
+    .demand(2)
+
+    .alias("s", "silent")
+    .alias("v", "verbose")
+
+    .help("h")
+    .alias("h", "help"),
+  releaseCommandHandler,
 )
 .demand(1)
 

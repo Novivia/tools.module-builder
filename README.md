@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-yapm install @auex/build-module --save-dev
+npm install @novivia/build-module --save-dev
 ```
 
 
