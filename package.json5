@@ -5,7 +5,7 @@
   "publishConfig": {
     "registry": "https://npm.novivia.com"
   },
-  "description": "AuctionEx Node.js module builder and packager.",
+  "description": "Novivia Node.js module builder and packager.",
   "authors": [
     "Mathieu M-Gosselin <mathieumg@novivia.com>",
   ],
