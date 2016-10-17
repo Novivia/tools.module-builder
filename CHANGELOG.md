@@ -1,5 +1,10 @@
 # Versions
 
+## v0.3.1 - (17/10/2016)
+
+* Updated `yargs` dependency to v6.
+
+
 ## v0.3.0 - (25/07/2016)
 
 * Project now maintained under the Novivia scope. (@novivia)
