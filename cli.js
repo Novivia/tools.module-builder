@@ -246,9 +246,7 @@ yargs // eslint-disable-line no-unused-expressions
   .example(
     "$0 release 1.2.3", "Release the current code under version 1.2.3",
   )
-
-  // eslint-disable-next-line no-magic-numbers
-  .demand(2)
+  .demand(1)
 
   .alias("s", "silent")
   .alias("v", "verbose")
