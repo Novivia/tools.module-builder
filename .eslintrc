@@ -7,7 +7,7 @@
     "es6": true
   },
   "globals": {},
-  "plugins": ["filenames", "header", "lodash", "markdown", "new-with-error", "node", "security", "babel", "flow-vars", "flowtype", "import", "promise", "you-dont-need-lodash-underscore"],
+  "plugins": ["filenames", "header", "lodash", "markdown", "new-with-error", "node", "security", "babel", "flowtype", "import", "promise", "you-dont-need-lodash-underscore"],
   "rules": {
     "camelcase": ["error", {
       "properties": "never"
@@ -25,8 +25,17 @@
       "properties": "never"
     }],
     "indent": ["error", 2, {
+      "MemberExpression": 0,
       "SwitchCase": 1,
-      "VariableDeclarator": 2
+      "VariableDeclarator": 2,
+      "FunctionDeclaration": {
+        "body": 1,
+        "parameters": 1
+      },
+      "FunctionExpression": {
+        "body": 1,
+        "parameters": 1
+      }
     }],
     "key-spacing": "error",
     "keyword-spacing": "error",
@@ -50,7 +59,7 @@
       }
     }],
     "no-multi-str": "error",
-    "no-spaced-func": "error",
+    "no-tabs": "error",
     "no-trailing-spaces": "error",
     "no-undef-init": "error",
     "no-unneeded-ternary": "error",
@@ -69,6 +78,9 @@
     "space-unary-ops": "error",
     "array-callback-return": "error",
     "callback-return": "error",
+    "node/exports-style": ["error", "module.exports", {
+      "allowBatchAssign": true
+    }],
     "eqeqeq": "error",
     "func-style": ["error", "declaration", {
       "allowArrowFunctions": true
@@ -104,6 +116,7 @@
     "no-fallthrough": ["error", {
       "commentPattern": "Fallthrough."
     }],
+    "no-global-assign": "error",
     "no-implied-eval": "error",
     "no-iterator": "error",
     "no-label-var": "error",
@@ -111,7 +124,6 @@
     "no-lonely-if": "error",
     "no-loop-func": "off",
     "no-mixed-operators": "error",
-    "no-native-reassign": "error",
     "no-new": "error",
     "no-new-func": "error",
     "no-new-object": "error",
@@ -120,7 +132,9 @@
     "no-return-assign": "error",
     "no-restricted-globals": ["error", "event"],
     "no-script-url": "error",
-    "no-self-assign": "error",
+    "no-self-assign": ["error", {
+      "props": true
+    }],
     "no-sequences": "error",
     "no-shadow": ["error", {
       "allow": ["callback", "cb", "err", "next", "res", "response", "result", "self"],
@@ -140,6 +154,7 @@
     "no-unexpected-multiline": "error",
     "no-unmodified-loop-condition": "error",
     "no-unsafe-finally": "error",
+    "no-unsafe-negation": "error",
     "no-unused-expressions": ["error", {
       "allowShortCircuit": true,
       "allowTernary": true
@@ -156,6 +171,9 @@
         "returns": "return"
       },
       "requireReturn": false
+    }],
+    "valid-typeof": ["error", {
+      "requireStringLiterals": true
     }],
     "wrap-iife": ["error", "outside"],
     "yoda": ["error", "never", {
@@ -210,17 +228,22 @@
     "filenames/match-regex": ["error", "^[A-Z]?([a-z0-9]+)([A-Z][a-z0-9]+)*(JSON)?$"],
     "arrow-body-style": ["error", "as-needed"],
     "arrow-spacing": "error",
+    "class-methods-use-this": "error",
     "comma-dangle": ["error", "always-multiline"],
     "constructor-super": "error",
     "import/default": "error",
     "import/export": "error",
-    "import/extensions": "error",
+    "import/extensions": ["error", "never"],
+    "import/first": "error",
     "babel/func-params-comma-dangle": ["error", "always-multiline"],
     "babel/generator-star-spacing": ["error", "after"],
-    "import/imports-first": "error",
+    "import/max-dependencies": ["error", {
+      "max": 30
+    }],
     "import/named": "error",
     "babel/new-cap": "error",
     "import/newline-after-import": "error",
+    "import/no-absolute-path": "error",
     "babel/no-await-in-loop": "error",
     "no-class-assign": "error",
     "no-confusing-arrow": ["error", {
@@ -243,10 +266,12 @@
       "ignore": ["build/locales/getLocales$", "js/render/prerenderSimple$"]
     }],
     "no-param-reassign": "error",
+    "no-template-curly-in-string": "error",
     "no-this-before-super": "error",
     "no-useless-concat": "error",
     "no-useless-constructor": "error",
     "no-var": "error",
+    "import/no-webpack-loader-syntax": "error",
     "object-shorthand": "error",
     "prefer-arrow-callback": "error",
     "prefer-const": "error",
@@ -261,14 +286,24 @@
     "promise/always-return": "error",
     "promise/catch-or-return": "error",
     "promise/param-names": "error",
-    "flow-vars/define-flow-type": "error",
+    "flowtype/boolean-style": "error",
+    "flowtype/define-flow-type": "error",
+    "flowtype/delimiter-dangle": ["error", "always-multiline"],
+    "flowtype/no-dupe-keys": "error",
     "flowtype/require-parameter-type": "error",
     "flowtype/require-return-type": "error",
     "flowtype/require-valid-file-annotation": "error",
+    "flowtype/semi": "error",
+    "flowtype/sort-keys": ["error", "asc", {
+      "caseSensitive": true,
+      "natural": true
+    }],
     "flowtype/space-after-type-colon": "error",
+    "flowtype/space-before-generic-bracket": "error",
     "flowtype/space-before-type-colon": "error",
     "flowtype/type-id-match": "error",
-    "flow-vars/use-flow-type": "error",
+    "flowtype/union-intersection-spacing": "error",
+    "flowtype/use-flow-type": "error",
     "you-dont-need-lodash-underscore/assign": "error",
     "you-dont-need-lodash-underscore/concat": "error",
     "you-dont-need-lodash-underscore/each": "error",
@@ -293,12 +328,17 @@
     "comma-style": ["error", "last"],
     "computed-property-spacing": ["error", "never"],
     "dot-location": ["error", "property"],
+    "func-call-spacing": "error",
     "lines-around-comment": ["error", {
       "allowArrayStart": true,
       "allowBlockStart": true,
       "allowObjectStart": true,
       "beforeBlockComment": true,
       "beforeLineComment": true
+    }],
+    "lines-around-directive": ["error", {
+      "before": "never",
+      "after": "always"
     }],
     "max-len": ["error", 80, 2, {
       "ignoreUrls": true
@@ -320,7 +360,12 @@
       }
     }],
     "padded-blocks": ["error", "never"],
+    "prefer-numeric-literals": "error",
     "radix": ["error", "as-needed"],
+    "sort-keys": ["error", "asc", {
+      "caseSensitive": true,
+      "natural": true
+    }],
     "space-before-blocks": ["error", "always"],
     "space-before-function-paren": ["error", "never"],
     "space-in-parens": ["error", "never"],
@@ -329,7 +374,7 @@
     }]
   },
   "parserOptions": {
-    "ecmaVersion": 7,
+    "ecmaVersion": 2017,
     "sourceType": "module"
   },
   "settings": {
