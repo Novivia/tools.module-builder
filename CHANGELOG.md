@@ -1,5 +1,12 @@
 # Versions
 
+## v0.4.0 - ()
+
+* Now officially requiring Node 4+ and npm 3+ to work.
+* Now always ignoring `__tests__` and `node_modules` sub-paths both for Babel
+  building and for packaging.
+
+
 ## v0.3.1 - (17/10/2016)
 
 * Updated `yargs` dependency to v6.
