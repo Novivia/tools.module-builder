@@ -3,6 +3,7 @@
   "root": true,
   "parser": "babel-eslint",
   "env": {
+    "jest": true,
     "node": true,
     "es6": true
   },
@@ -82,6 +83,7 @@
       "allowBatchAssign": true
     }],
     "eqeqeq": "error",
+    "func-name-matching": "error",
     "func-style": ["error", "declaration", {
       "allowArrowFunctions": true
     }],
@@ -137,8 +139,7 @@
     }],
     "no-sequences": "error",
     "no-shadow": ["error", {
-      "allow": ["callback", "cb", "err", "next", "res", "response", "result", "self"],
-      "builtinGlobals": true
+      "allow": ["callback", "cb", "err", "next", "res", "response", "result", "self"]
     }],
     "no-shadow-restricted-names": "error",
     "no-octal-escape": "error",
@@ -175,12 +176,15 @@
     "valid-typeof": ["error", {
       "requireStringLiterals": true
     }],
-    "wrap-iife": ["error", "outside"],
+    "wrap-iife": ["error", "outside", {
+      "functionPrototypeMethods": true
+    }],
     "yoda": ["error", "never", {
       "exceptRange": true
     }],
     "lodash/callback-binding": "error",
     "lodash/chain-style": "error",
+    "lodash/chaining": ["error", "always", 2],
     "lodash/collection-method-value": "error",
     "lodash/collection-return": "error",
     "lodash/consistent-compose": "error",
@@ -190,9 +194,7 @@
     "lodash/no-commit": "error",
     "lodash/no-double-unwrap": "error",
     "lodash/no-extra-args": "error",
-    "lodash/no-single-chain": "error",
     "lodash/path-style": "error",
-    "lodash/prefer-chain": "error",
     "lodash/prefer-compact": "error",
     "lodash/prefer-filter": "error",
     "lodash/prefer-flat-map": "error",
@@ -229,13 +231,18 @@
     "arrow-body-style": ["error", "as-needed"],
     "arrow-spacing": "error",
     "class-methods-use-this": "error",
-    "comma-dangle": ["error", "always-multiline"],
+    "comma-dangle": ["error", {
+      "arrays": "always-multiline",
+      "exports": "always-multiline",
+      "functions": "always-multiline",
+      "imports": "always-multiline",
+      "objects": "always-multiline"
+    }],
     "constructor-super": "error",
     "import/default": "error",
     "import/export": "error",
     "import/extensions": ["error", "never"],
     "import/first": "error",
-    "babel/func-params-comma-dangle": ["error", "always-multiline"],
     "babel/generator-star-spacing": ["error", "after"],
     "import/max-dependencies": ["error", {
       "max": 30
@@ -286,13 +293,19 @@
     "promise/always-return": "error",
     "promise/catch-or-return": "error",
     "promise/param-names": "error",
+    "promise/no-return-wrap": "error",
     "flowtype/boolean-style": "error",
     "flowtype/define-flow-type": "error",
     "flowtype/delimiter-dangle": ["error", "always-multiline"],
     "flowtype/no-dupe-keys": "error",
-    "flowtype/require-parameter-type": "error",
+    "flowtype/object-type-delimiter": "error",
+    "flowtype/require-parameter-type": ["error", {
+      "excludeArrowFunctions": "expressionsOnly"
+    }],
     "flowtype/require-return-type": "error",
-    "flowtype/require-valid-file-annotation": "error",
+    "flowtype/require-valid-file-annotation": ["error", "never", {
+      "annotationStyle": "block"
+    }],
     "flowtype/semi": "error",
     "flowtype/sort-keys": ["error", "asc", {
       "caseSensitive": true,
