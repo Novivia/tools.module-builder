@@ -1,6 +1,6 @@
 # Versions
 
-## v0.4.0 - ()
+## v0.4.0 - (27/10/2016)
 
 * Now officially requiring Node 4+ and npm 3+ to work.
 * Now always ignoring `__tests__` and `node_modules` sub-paths both for Babel
