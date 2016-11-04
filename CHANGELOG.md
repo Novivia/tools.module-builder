@@ -1,5 +1,10 @@
 # Versions
 
+## v0.5.1 - (04/11/2016)
+
+* Addressed v0.5.0 not working at all.
+
+
 ## v0.5.0 - (04/11/2016)
 
 * Now also accepting options in the `novivia-builder` package field.

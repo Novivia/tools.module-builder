@@ -30,7 +30,6 @@
   },
   "novivia-builder": {
     "babelPatterns": ["cli.js"],
-    "forceRuntime": false,
     "packagePatterns": ["cliWrapper"],
   },
   "novivia-linter": {
