@@ -1,7 +1,7 @@
 {
   "name": "@novivia/build-module",
   "role": "module-builder",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "engines": {
     "node": ">=4",
     "npm": ">=3"
