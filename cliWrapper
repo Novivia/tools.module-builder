@@ -1,5 +1,3 @@
 #!/usr/bin/env node
-require("better-log/install");
-require("babel-register");
-require("babel-polyfill");
+
 require("./cli");
