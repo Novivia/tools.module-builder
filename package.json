@@ -16,13 +16,18 @@
     "url": "git@github.com:Novivia/tools.module-builder.git"
   },
   "scripts": {
-    "build": "./cliWrapper build -b cli.js -p cliWrapper --no-runtime --node-target 7",
+    "build": "./cliWrapper build",
     "lint": "novivia-linter lint",
     "pub": "./cliWrapper publish",
     "release": "./cliWrapper release"
   },
   "bin": {
-    "build-module": "./cliWrapper"
+    "novivia-builder": "./cliWrapper",
+  },
+  "novivia-builder": {
+    "babelPatterns": ["cli.js"],
+    "forceRuntime": false,
+    "packagePatterns": ["cliWrapper"],
   },
   "novivia-linter": {
     "targets": {
@@ -38,7 +43,7 @@
   },
   "dependencies": {
     // Novivia dependencies.
-    "@novivia/babel": "0.0.2",
+    "@novivia/babel": "0.0.3",
 
     // npm dependencies.
     "babel-core": "^6.18.0",

@@ -1,5 +1,25 @@
 # Versions
 
+## v0.5.0 - (04/11/2016)
+
+* Now also accepting options in the `novivia-builder` package field.
+* Renamed the CLI binary from `build-module` to `novivia-builder` for
+  consistency with other `@novivia` tools.
+
+* Added the `@novivia/babel` dependency.
+
+* Removed dependencies:
+    * `babel-plugin-add-module-exports`
+    * `babel-plugin-transform-decorators-legacy`
+    * `babel-plugin-transform-runtime`
+    * `babel-plugin-typecheck`
+    * `babel-polyfill`
+    * `babel-preset-es2015`
+    * `babel-preset-react`
+    * `babel-preset-stage-0`
+    * `babel-register`
+
+
 ## v0.4.0 - (27/10/2016)
 
 * Now officially requiring Node 4+ and npm 3+ to work.
