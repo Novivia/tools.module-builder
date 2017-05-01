@@ -1,5 +1,12 @@
 # Versions
 
+## v0.5.3 - (01/05/2017)
+
+* Updated dependencies:
+    * `fs-extra` to v3.
+    * `yargs` to v7.
+
+
 ## v0.5.2 - (16/12/2016)
 
 * Now always ignoring `__mocks__` sub-paths both for Babel building and for
